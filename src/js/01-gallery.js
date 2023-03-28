@@ -5,6 +5,8 @@ import "simplelightbox/dist/simple-lightbox.min.css";
  import { galleryItems } from './gallery-items';
 
 const gallery = document.querySelector('.gallery');
+gallery.style.listStyle = "none";
+
 const imagesMarkup = galleryItems.map(({ original, preview, description }) =>
   `<li class="gallery__item">
     <a href="${original}" target="_blank">
