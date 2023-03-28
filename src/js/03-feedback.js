@@ -20,7 +20,6 @@ function onInputData(event) {
 function reloadPage() {
   if (JSON.parse(localStorage.getItem('feedback-form-state'))) {
     const reloadForm = JSON.parse(localStorage.getItem('feedback-form-state'))
-    console.log(reloadForm);
     document.querySelector('input').value = reloadForm.email;
     document.querySelector('textarea').value = reloadForm.message;
   }
