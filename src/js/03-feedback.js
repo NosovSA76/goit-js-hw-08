@@ -20,7 +20,6 @@ function onInputData(event) {
 function reloadPage() {
   if (JSON.parse(localStorage.getItem('feedback-form-state'))) {
     const reloadForm = JSON.parse(localStorage.getItem('feedback-form-state'))
-    console.log(reloadForm);
     document.querySelector('input').value = reloadForm.email;
     document.querySelector('textarea').value = reloadForm.message;
   }
@@ -28,7 +27,11 @@ function reloadPage() {
 
 function onFormSubmit(event) {
   event.preventDefault();
+  if (JSON.parse(localStorage.getItem('feedback-form-state'))) {
   console.log(JSON.parse(localStorage.getItem('feedback-form-state')));
   event.currentTarget.reset();
   localStorage.removeItem('feedback-form-state')
+  } else {
+    alert("Заповніть поля форми!")
+}
 }
