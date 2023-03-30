@@ -28,9 +28,13 @@ function reloadPage() {
 function onFormSubmit(event) {
   event.preventDefault();
   if (JSON.parse(localStorage.getItem('feedback-form-state'))) {
+    const controlForm = JSON.parse(localStorage.getItem('feedback-form-state'))
+    if (controlForm.email ){
   console.log(JSON.parse(localStorage.getItem('feedback-form-state')));
   event.currentTarget.reset();
-  localStorage.removeItem('feedback-form-state')
+      localStorage.removeItem('feedback-form-state')
+    }
+    else{alert("Заповнення електронної адреси обовязкове")}
   } else {
     alert("Заповніть поля форми!")
 }
